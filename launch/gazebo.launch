@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find mecanum_drive_v2)/urdf/mecanum_drive_v2.urdf'" />
+
+
+  <include
+    file="$(find gazebo_ros)/launch/empty_world.launch" />
+  <node
+    name="my_robot_spawn"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-urdf -param robot_description -model mecanum_drive_v2"
+    output="screen" />
+
+</launch>
+
+
+
+
+
+
+
+
+<!-- VERSION - 1.2 -->
+
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <param name="robot_description" command="$(find xacro)/xacro add dash dash inorder '$(find mecanum_drive_v2)/urdf/mecanum_drive_v2.urdf'" />
+
+
+  <include
+    file="$(find gazebo_ros)/launch/empty_world.launch" />
+  <node
+    name="my_robot_spawn"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-urdf -param robot_description -model mecanum_drive_v2"
+    output="screen" />
+
+</launch> -->
+
+
+
+
+
+
+
+<!-- <launch>
+  <include
+    file="$(find gazebo_ros)/launch/empty_world.launch" />
+  <node
+    name="spawn_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find mecanum_drive_v2)/urdf/mecanum_drive_v2.urdf -urdf -model mecanum_drive_v2"
+    output="screen" />
+  <node
+    name="fake_joint_calibration"
+    pkg="rostopic"
+    type="rostopic"
+    args="pub /calibrated std_msgs/Bool true" />
+
+</launch> -->
+
+
+
+
+
+
+<!-- <launch>
+  <include
+    file="$(find gazebo_ros)/launch/empty_world.launch" />
+  <node
+    name="spawn_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find mecanum_drive_v2)/urdf/mecanum_drive_v2.urdf -urdf -model mecanum_drive_v2"
+    output="screen" />
+  <node
+    name="fake_joint_calibration"
+    pkg="rostopic"
+    type="rostopic"
+    args="pub /calibrated std_msgs/Bool true" />
+</launch> -->
